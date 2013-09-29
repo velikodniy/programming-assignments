@@ -1,0 +1,60 @@
+\newlength{\UDCLength}
+\setlength{\UDCLength}{\maxof{\widthof{УДК}}{\widthof{ББК}}}
+\noindent\makebox[\UDCLength][l]{УДК} \UDC\\
+\noindent\makebox[\UDCLength][l]{ББК} \BBK\\
+\noindent\makebox[\UDCLength][l]{} \AS
+
+\vfill{}
+
+\noindent
+    {\addfontfeature{LetterSpace=30}Рецензенты}:
+
+\noindent\textbf{Коровай~А.~В.}, к.~ф.-м.~н., зав. каф. ИиВТ ПГУ им. Т.~Г.~Шевченко
+
+\noindent\textbf{Марков~Д.~А.}, ст.~преп. каф. НОиКР ПГУ им.~Т.~Г.~Шевченко
+
+\vfill{}
+
+\newlength{\ASShiftLength}
+\setlength{\ASShiftLength}{-0.5em-\widthof{\AS}}
+\noindent {\hspace{\ASShiftLength}\AS}\hfill%
+\begin{minipage}[t]{1\columnwidth}%
+  \noindent\hspace{2em}\textbf{\AuthorI}
+
+  \noindent\hspace{2em}\Title: \PubType.
+  — Тирасполь,~\Year. — \pageref{LASTPAGE}~с. %%% FIXME Количество страниц
+  \medskip{}
+
+  \hspace{2em}{\small Курс состоит из нескольких разделов, в которых
+    описываются основные понятия, связанные с технологией
+    программирования, написанием программ и их выполнением, подробно
+    рассматривается объектно-ориентированная парадигма
+    программирования. Также кратко описаны распространённые алгоритмы
+    и структуры данных. Изложение ведётся на примере языка
+    программирования C\#.}
+
+  \hspace{2em}{\small Пособие предназначено для студентов, обучающихся
+    по направлениям «Прикладная математика» и «Прикладная математика и
+    информатика».}
+\end{minipage}
+
+\noindent
+\begin{flushright}
+  \begin{minipage}[t]{0.5\columnwidth}
+    \noindent\makebox[\UDCLength][l]{УДК} \UDC\\
+    \noindent\makebox[\UDCLength][l]{ББК} \BBK
+  \end{minipage}
+\end{flushright}
+
+\vfill{}
+
+\begin{center}
+  Утверждено Научно-методическим советом ПГУ~им.~Т.~Г.~Шевченко
+\end{center}
+
+\vfill{}
+
+\noindent {\small © \AuthorI, \Year.}
+
+\thispagestyle{empty}
+\newpage
