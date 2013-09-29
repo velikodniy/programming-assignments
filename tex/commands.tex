@@ -1,3 +1,12 @@
 \newcommand{\Lst}[1]{{\lstfont #1}}
 
-\newcommand{\SectionS}[1]{\section*{#1}\addcontentsline{toc}{section}{#1}\markboth{#1}{#1}}
+\newcounter{task}[subsection]
+
+\newcommand{\SectionS}[1]{
+  \section*{#1}
+  \addcontentsline{toc}{section}{#1}
+  \markboth{#1}{#1}}
+
+\newcommand{\task}[0]{
+  \textbf{\thesubsection -\thetask}
+  \stepcounter{task}}
