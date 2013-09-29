@@ -1,0 +1,146 @@
+\documentclass[10pt, russian]{article}
+
+\usepackage{lipsum} % DELME
+
+\sloppy
+%%% Константы %%%
+\newcommand{\Author}{В.~И.~Великодный}
+\newcommand{\AuthorI}{Великодный~В.~И.}
+\newcommand{\Title}{Задачи по программированию}
+\newcommand{\SubTitle}{Часть I}
+\newcommand{\PubType}{Учебное пособие}
+\newcommand{\Year}{2013}
+
+\newcommand{\UDC}{???} % УДК
+\newcommand{\BBK}{???} % ББК
+\newcommand{\AS}{В??}  % Авторский знак
+
+%%% Математические шрифты %%%
+\usepackage{amssymb}
+\usepackage{unicode-math}
+
+%%% Шрифты документа %%%
+\usepackage{fontspec}					% Использовать OTF/TTF
+\defaultfontfeatures{Scale=MatchLowercase, Mapping=tex-text}
+\setmainfont{Charis SIL}
+\setsansfont{Liberation Sans}
+\setmonofont{Ubuntu Mono}
+\setmathfont{TeX Gyre Pagella Math}
+
+%%% XeTeX fix
+\newfontfamily{\cyrillicfont}{Charis SIL}
+
+%%% Семейства шрифтов %%%
+\newfontfamily\footfont{Droid Sans} 
+\newfontfamily\titlefont{Ubuntu} 
+\newfontfamily\lstfont{Ubuntu}
+\newfontfamily\subsectionfont{Liberation Sans}
+
+%%% Графика %%%
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{positioning,arrows}
+
+%%% Тексты программ %%%
+\usepackage{listings}
+\lstset{
+  basicstyle={\small\lstfont},
+  breaklines=true,
+  language={[Sharp]C},
+  numbers=left,
+  numberstyle={\scriptsize},
+  showstringspaces=false,
+  tabsize=4,
+  escapeinside={\%*}{*)}            % if you want to add LaTeX within your code
+}
+\lstset{morekeywords={var}}
+
+%%% Геометрия страницы %%%
+\usepackage[
+  twoside,
+  driver=xetex,
+  a5paper,
+  includefoot,
+  headsep=0mm,
+  tmargin=1.5cm,
+  bmargin=1.5cm,
+  lmargin=1.5cm,
+  rmargin=1.5cm
+]{geometry}
+
+%%% Колонтитулы %%%
+\usepackage{fancyhdr}
+
+%\renewcommand{\chaptermark}[1]{\markboth{#1}{}} % Отображать названия
+                                                % в нижнем регистре
+\fancypagestyle{fancystyle}{
+  \fancyhf{}
+  \fancyfoot[LE]{
+    \footfont\textbf{\thepage}~|~\nouppercase{\leftmark{}}%
+  }
+  \fancyfoot[RO]{
+    \footfont \nouppercase{\rightmark{}}~|~\textbf{\thepage}
+  }
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0.4pt}
+}
+
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \fancyfoot[C]{\footfont\textbf{\thepage}}
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0.4pt}
+}
+
+%%% Настройки PDF %%%
+\usepackage[
+  unicode=true,
+  bookmarks=true,
+  bookmarksnumbered=false,
+  bookmarksopen=false,
+  breaklinks=false,
+  pdfborder={0 0 0},
+  backref=false,
+  colorlinks=false
+]{hyperref}
+\hypersetup{
+  pdftitle={\Title},
+  pdfauthor={\Author}
+}
+\urlstyle{same}
+
+%%% Локализация %%%
+\usepackage{xunicode}
+\usepackage{polyglossia}
+\setdefaultlanguage[spelling=modern]{russian}
+\setotherlanguage{english}
+
+%%% Прочее %%%
+\usepackage{indentfirst}
+%\usepackage[russian]{varioref}
+\usepackage{mathtext}
+\usepackage[normalem]{ulem} % ???
+\usepackage{stmaryrd} % ???
+\usepackage{calc}
+\usepackage{fancyvrb}
+\usepackage{rotating}
+\usepackage{bytefield} % Рисование карт памяти
+\usepackage{epigraph}  % Эпиграфы
+
+%%% Индекс %%%
+\usepackage{makeidx}
+\makeindex
+
+%%% Библиотграфия
+\bibliographystyle{ugost2008s}
+
+%%% Нумерация разделов %%%
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
+%\usepackage{titlesec}
+%\titleformat*{\subsection}
+%             {\normalfont\normalsize\bfseries\lstfont}
+%\titlespacing*{\subsection}
+%              {\parindent}
+%              {0.3em}
+%              {0.3em}

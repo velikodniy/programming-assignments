@@ -1,0 +1,36 @@
+\include{header}
+\include{commands}
+
+\begin{document}
+\pagestyle{empty}       % Нумерация страниц выключена
+\include{cover}         % Обложка
+\include{title}         % Титульный лист
+\include{infopage}      % Страница с выходными данными
+
+\cleardoublepage
+\pagestyle{fancystyle}
+
+\include{preface}       % Введение
+
+\include{01} % Линейные алгоритмы
+\include{02} % Алгоритмы с ветвлением
+\include{03} % Циклы
+\include{04} % Функции
+\include{05} % Классы и исключения
+\include{06} % Массивы и коллекции
+\include{07} % LINQ
+\include{08} % Обработка текстовых данных
+\include{09} % Наследование и полиморфизм
+
+\include{afterword}                                 % Заключение
+
+\addcontentsline{toc}{section}{\refname}
+\bibliography{references}                           % Библиография
+\nocite{*}                                          % Печать всей библиографии из базы
+
+\newpage
+\tableofcontents                                    % Оглавление
+
+\include{outinfo}                                   % Выпускные сведения
+\label{LASTPAGE}
+\end{document}
