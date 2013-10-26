@@ -20,24 +20,23 @@
 
 %%% Математические шрифты %%%
 \usepackage{amssymb}
-\usepackage{unicode-math}
+\usepackage{mathspec}
+\usepackage[charter]{mathdesign}
 
 %%% Шрифты документа %%%
 \usepackage{fontspec}					% Использовать OTF/TTF
-\defaultfontfeatures{Scale=MatchLowercase, Mapping=tex-text}
+\defaultfontfeatures{Scale=MatchLowercase,Mapping=tex-text}
 \setmainfont{Charis SIL}
-\setsansfont{Liberation Sans}
+\setsansfont{Linux Biolinum O}
 \setmonofont{Ubuntu Mono}
-\setmathfont{TeX Gyre Pagella Math}
 
 %%% XeTeX fix
 \newfontfamily{\cyrillicfont}{Charis SIL}
 
 %%% Семейства шрифтов %%%
-\newfontfamily\footfont{Droid Sans} 
+\newfontfamily\footfont{Ubuntu}
 \newfontfamily\titlefont{Ubuntu} 
 \newfontfamily\lstfont{Ubuntu}
-\newfontfamily\subsectionfont{Liberation Sans}
 
 %%% Графика %%%
 \usepackage{graphicx}
@@ -74,8 +73,6 @@
 %%% Колонтитулы %%%
 \usepackage{fancyhdr}
 
-%\renewcommand{\chaptermark}[1]{\markboth{#1}{}} % Отображать названия
-                                                % в нижнем регистре
 \fancypagestyle{fancystyle}{
   \fancyhf{}
   \fancyfoot[LE]{
