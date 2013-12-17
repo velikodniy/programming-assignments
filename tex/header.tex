@@ -75,6 +75,13 @@
   rmargin=1.5cm
 ]{geometry}
 
+%%% Списки %%%
+\newenvironment{itemize*}%
+               {\begin{itemize}%
+                   \setlength{\itemsep}{1pt}%
+                   \setlength{\parskip}{1pt}}%
+               {\end{itemize}}
+
 %%% Колонтитулы %%%
 \usepackage{fancyhdr}
 
