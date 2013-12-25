@@ -198,6 +198,14 @@ b \in \mathbb{R},$ а $\varepsilon \neq 0$ — абстрактная велич
 \item перегруженный метод ToString.
 \end{itemize*}
 
+Операции над дуальными числами определены следующим образом:
+\begin{align*}
+  (a+b\varepsilon) + (c+d\varepsilon) &= (a+c) + (b+d)\varepsilon,\\
+  (a+b\varepsilon) - (c+d\varepsilon) &= (a-c) + (b-d)\varepsilon,\\
+  (a+b\varepsilon) \times (c+d\varepsilon) &= (ac) + (bc+ad)\varepsilon,\\
+  \frac{a+b\varepsilon}{c+d\varepsilon} &= \frac{a}{c} + \frac{bc-ad}{c^2}\varepsilon.
+\end{align*}
+
 Предусмотреть возможные исключительные ситуации, если это необходимо.
 
 Написать программу, использующую этот класс.
