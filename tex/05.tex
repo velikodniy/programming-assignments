@@ -33,10 +33,15 @@
 
 Операции интервальной арифметики определяются следующим образом:
 \begin{align*}
-[a, b] + [c, d] &= [a + c, b + d],\\
-[a, b] - [c, d] &= [a - c, b - d],\\
-[a, b] \times [c, d] &= [\min \{ac, ad, bc, bd\}, \max \{ac, ad, bc, bd\}],\\
-\frac{[a, b]}{[c, d]} &=  \left[\min \left\{\frac{a}{c}, \frac{a}{d}, \frac{b}{c}, \frac{b}{d}\right\}, \max \left\{\frac{a}{c}, \frac{a}{d}, \frac{b}{c}, \frac{b}{d}\right\}\right]
+  [a, b] + [c, d] &= [a + c, b + d],\\
+  [a, b] - [c, d] &= [a - c, b - d],\\
+  [a, b] \times [c, d] &=
+  [\min \{ac, ad, bc, bd\}, \max \{ac, ad, bc, bd\}],\\
+  \frac{[a, b]}{[c, d]} &=
+  \left[
+    \min \left\{\frac{a}{c}, \frac{a}{d}, \frac{b}{c}, \frac{b}{d}\right\},
+    \max \left\{\frac{a}{c}, \frac{a}{d}, \frac{b}{c}, \frac{b}{d}\right\}
+    \right].
 \end{align*}
 
 Предусмотреть возможные исключительные ситуации, если это необходимо.
@@ -203,7 +208,8 @@ b \in \mathbb{R},$ а $\varepsilon \neq 0$ — абстрактная велич
   (a+b\varepsilon) + (c+d\varepsilon) &= (a+c) + (b+d)\varepsilon,\\
   (a+b\varepsilon) - (c+d\varepsilon) &= (a-c) + (b-d)\varepsilon,\\
   (a+b\varepsilon) \times (c+d\varepsilon) &= (ac) + (bc+ad)\varepsilon,\\
-  \frac{a+b\varepsilon}{c+d\varepsilon} &= \frac{a}{c} + \frac{bc-ad}{c^2}\varepsilon.
+  \frac{a+b\varepsilon}{c+d\varepsilon} &=
+  \frac{a}{c} + \frac{bc-ad}{c^2}\varepsilon.
 \end{align*}
 
 Предусмотреть возможные исключительные ситуации, если это необходимо.
