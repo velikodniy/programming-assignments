@@ -2,57 +2,6 @@
 
 \subsection{Простые преобразования}
 
-Посчитать количество букв “ё” в тексте и в конец текста с новой строки
-добавить “В предложении n букв ё.” , где n количество букв ё.
-
-Решение: рассмотрим два способа решения этой задачи: с помощью
-StringBuilder и с помощью конкотенации строк.
-
-В цикле пройдем по строке и подсчитаем количество букв ё и в
-зависимости от их количества добавим или не добавим соответствующую
-строку.
-
-Текст программы:
-
-%% using System;
-%% using System.Collections.Generic;
-%% using System.Linq;
-%% using System.Text;
-
-%% namespace test
-%% {
-%%     class Program{
-%%         public static void Main(string[] args)
-%%         {
-            
-                
-%%                 //с использованием StringBuilder - здесь мы можем добавлять и удалять содержимое из строки
-%%         StringBuilder textB = new StringBuilder();
-%%         textB.Append(@''В лесу живет ёжик. У ёжика есть иголки'');
-%%                 int k=0;
-%%             for (int i = 0; i < textB.Length; i++) {
-%%                     if(textB[i]=='ё')
-%%                         k++;
-%%                 }
-%%                 textB.AppendLine(String.Format(``В предложении {0} букв ё.'',k));
-%%                 Console.WriteLine(textB);
-%%                 Console.ReadKey(true);
-                
-%%                 //без StringBuilder - здесь чтобы добавить в строку содержимое нужно создавать новую строку
-%%                 string text = @'' В лесу живет ёжик. У ёжика есть иголки ``;
-%%             k=0;
-%%             for (int i = 0; i < text.Length; i++) {
-%%                     if(text[i]=='ё')
-%%                         k++;
-%%                 }
-%%                 var newTxt = text + String.Format(``В предложении {0} букв ё.'',k);
-%%                 Console.WriteLine(newTxt);
-%%                 Console.ReadKey(true);
-%%             }
-            
-%%         }
-%%     }
-
 \task Заменить в тексте все символы «*» на символ «.», и в конец
 текста добавить предложение вида «замены были в позициях
   N1,N2,N3,…,Nk», где Ni индекс замененного символа в тексте.
@@ -81,36 +30,8 @@ StringBuilder и с помощью конкотенации строк.
 \task Дано предложение. Заменить в нем все вхождения буквы а на
 буквосочетание ух.
 
+
 \subsection{Стандартные методы}
-
-Массив чисел задан в виде строки a1 a2 a3 a4 a5 … an . Необходимо
-найти максимум и минимум.
-
-Решение: С помощью LINQ и стандартных методов классов Array(Max,Min) и
-String (Split) найдем необходимые значения.
-
-Пример программы:
-
-%% using System;
-%% using System.Collections.Generic;
-%% using System.Linq;
-%% using System.Text;
-
-%% namespace test
-%% {
-%%     class Program
-%%     {
-%%         public static void Main(string[] args)
-%%         {
-%%             var DATA = @''1 2 3 4 5 6 7 8 9 0 5000 0,23 -400'';
-%%             var numerics= from x in DATA.Split(' ')/*<- разбиваем строку на масив строк по символу пробел и перебираем его элементы*/ 
-%%                 select double.Parse(x)/* <- преобразуем строку в число типа double*/;
-%%             Console.WriteLine(``Maximum: {0}\nMinimum: {1}'',numerics.Max(),numerics.Min());
-%%             Console.ReadKey(true);
-%%         }
-%%     }
-%% }
-
 
 \task Массив чисел задан в виде строки. Найти сумму всех четных
 элементов.
@@ -141,42 +62,6 @@ String (Split) найдем необходимые значения.
 произведение, записанное в строке
 
 \subsection{Регулярные выражения}
-
-По всем правилам запятая ставиться сразу после слова и после неё
-обязательно должен следовать пробел, например: «не черное, а
-  белое». Задан текст, в котором запятые расставлены без соблюдения
-этого правила. Написать программу расставляющую запятые правильно.
-
-Решение: к сожалению, в .NET реализовано не все множество возможностей
-регулярных выражений языка PERL 5, но даже того что есть будет
-достаточно. Для поиска некорректных расстановок запятых воспользуемся
-шаблоном @“\\s*,\\s*” , где \\s – соответствует пробельному символу, а *
-указывает что он может повторяться 0 и более раз.
-
-Пример программы:
-
-%% using System;
-%% using System.Collections.Generic;
-%% using System.Linq;
-%% using System.Text.RegularExpressions;
-
-%% namespace test
-%% {
-%%     class Program
-%%     {
-%%         public static void Main(string[] args)
-%%         {
-%%             var DATA = @''Mozilla exists to promote openness,    innovation and opportunity on the Internet.
-%%  We’ve been doing it for 15 years and the following 15 facts offer
-%%  a look at who we are,including some of our biggest achievements and milestones.
-%%  But in some ways we’re just getting started , exploring new technology   , entering
-%%  new areas and reaching new users every day. ``;
-%%             var rightText = Regex.Replace(DATA,@''\s*,\s*'','', ``,RegexOptions.Multiline);
-%%             Console.WriteLine(rightText);
-%%             Console.ReadKey(true);
-%%         }
-%%     }
-%% }
 
 \task Заменить везде в тексте имя «Вася» на «Коля».
 
