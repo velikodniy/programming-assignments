@@ -1,4 +1,4 @@
-JOB=programming-tasks
+JOB=programming-assignments
 
 HOME:=$(shell readlink -f .)
 BUILDDIR=$(HOME)/build
