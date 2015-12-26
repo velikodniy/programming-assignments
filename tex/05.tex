@@ -131,14 +131,14 @@ Ax+By+C=0.
 
 Операции интервальной арифметики определяются следующим образом:
 \begin{align*}
-  [a, b] + [c, d] &= [a + c, b + d],\\
-  [a, b] - [c, d] &= [a - c, b - d],\\
-  [a, b] \times [c, d] &=
-  [\min \{ac, ad, bc, bd\}, \max \{ac, ad, bc, bd\}],\\
-  \frac{[a, b]}{[c, d]} &=
+  [a_1, b_1] + [a_2, b_2] &= [a_1 + a_2, b_1 + b_2],\\
+  [a_1, b_1] - [a_2, b_2] &= [a_1 - a_2, b_1 - b_2],\\
+  [a_1, b_1] \times [a_2, b_2] &=
+  [\min \{a_1a_2, a_1b_2, b_1a_2, b_1b_2\}, \max \{a_1a_2, a_1b_2, b_1a_2, b_1b_2\}],\\
+  \frac{[a_1, b_1]}{[a_2, b_2]} &=
   \left[
-    \min \left\{\frac{a}{c}, \frac{a}{d}, \frac{b}{c}, \frac{b}{d}\right\},
-    \max \left\{\frac{a}{c}, \frac{a}{d}, \frac{b}{c}, \frac{b}{d}\right\}
+    \min \left\{\frac{a_1}{a_2}, \frac{a_1}{b_2}, \frac{b_1}{a_2}, \frac{b_1}{b_2}\right\},
+    \max \left\{\frac{a_1}{a_2}, \frac{a_1}{b_2}, \frac{b_1}{a_2}, \frac{b_1}{b_2}\right\}
     \right], \textrm{если } 0\not\in[c, d].
 \end{align*}
 
