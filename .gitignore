@@ -25,6 +25,7 @@ build/
 *.out
 *.pdfsync
 *.ps
+*.pdf
 *.snm
 *.synctex.gz
 *.toc
