@@ -149,9 +149,51 @@
 поиска. Класс должен содержать методы \Lst{Add} (добавление элемента в
 дерево), \Lst{InOrderWalk} (симметричный обход дерева).
 
-Написать метод \Lst{FromArray}, формирующий дерево на основе массива
-по слоям. То есть, первый элемент массива — корень, второй и третий —
-его потомки, следующие четыре — потомки второго и третьего и т.~д.
+Написать метод \Lst{RightRotate}, выполняющий правый поворот дерева
+относительно корня. Процедура правого поворота показана на рисунке
+\ref{fig:rotate}.
+
+\begin{figure}
+  \begin{centering}
+    \tikzstyle{line} = [draw, -latex']
+    \usetikzlibrary{shapes,positioning}
+    \begin{tikzpicture}[
+      thick,
+      node distance=1.5cm,
+      text height=1.2ex,
+      text depth=.1ex,
+      auto]
+
+      \node[circle, draw]                    (B)  {B};
+      \node[below right of=B]                (c)  {$\gamma$};
+      \node[circle, draw, below left of=B]   (A)  {A};
+      \node[below left  of=A]                (a)  {$\alpha$};
+      \node[below right of=A]                (b)  {$\beta$};
+      
+      \path[line] (A) edge (a);
+      \path[line] (A) edge (b);
+      \path[line] (B) edge (A);
+      \path[line] (B) edge (c);
+
+      \node at (2, -1)          {$\longrightarrow$};
+
+      \node[circle, draw] at (4,0)           (rA) {A};
+      \node[below left of=rA]                (ra) {$\alpha$};
+      \node[circle, draw, below right of=rA] (rB) {B};
+      \node[below left  of=rB]               (rb) {$\beta$};
+      \node[below right of=rB]               (rc) {$\gamma$};
+      
+      \path[line] (rA) edge (ra);
+      \path[line] (rA) edge (rB);
+      \path[line] (rB) edge (rb);
+      \path[line] (rB) edge (rc);
+    \end{tikzpicture}
+    \par
+  \end{centering}
+
+  \caption{Правый поворот дерева (греческими буквами обозначены
+    поддеревья)\label{fig:rotate}}
+\end{figure}
 
 Написать программу, использующую этот класс.
 
