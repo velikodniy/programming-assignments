@@ -201,8 +201,58 @@
 поиска. Класс должен содержать методы \Lst{Add} (добавление элемента в
 дерево), \Lst{InOrderWalk} (симметричный обход дерева).
 
-Написать метод \Lst{Print}, выводящий дерево в текстовый поток. Поток
-должен передаваться через аргументы метода.
+Написать метод \Lst{Print}, выводящий строковое представление дерева в
+текстовый поток (например для последующей записи в файл). Поток должен
+передаваться через аргументы метода.
+
+Пример строкового представления дерева приведён на рисунке
+\ref{fig:tree-sample}.
+
+\begin{figure}
+  \centering
+  \begin{minipage}[c]{0.4\textwidth}
+    \centering
+    \tikzstyle{line} = [draw, -latex']
+    \usetikzlibrary{shapes,positioning}
+    \begin{tikzpicture}[
+      thick,
+      node distance=1.2cm,
+      text height=1.2ex,
+      text depth=.1ex,
+      auto]
+      
+      \node                    (A) {2};
+      \node[below left of=A]   (C) {1};
+      \node[below right of=A]  (B) {4};
+      \node[below left  of=B]  (D) {3};
+      \node[below right of=B]  (E) {5};
+      
+      \path[line] (A) edge (C);
+      \path[line] (A) edge (B);
+      \path[line] (B) edge (D);
+      \path[line] (B) edge (E);
+    \end{tikzpicture}
+  \end{minipage}%
+  \begin{minipage}[c]{0.2\textwidth}
+    \begin{framed}
+      \centering
+\begin{verbatim}
+      5
+   4
+      3
+2
+   1
+\end{verbatim}
+    \end{framed}
+  \end{minipage}
+  
+  
+  \caption{Пример строкового представления дерева
+    сортировки\label{fig:tree-sample}}
+\end{figure}
+
+\begin{centering}
+\end{centering}
 
 Написать программу, использующую этот класс.
 
