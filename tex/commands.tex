@@ -1,6 +1,7 @@
 \newcommand{\Lst}[1]{{\lstfont #1}}
 
 \newcounter{task}[subsection]
+\newtotcounter{tasktotal}
 
 \newcommand{\SectionS}[1]{
   \section*{#1}
@@ -10,4 +11,5 @@
 \newcommand{\task}[0]{%
   \textbf{\thesubsection -\thetask}%
   \stepcounter{task}%
+  \stepcounter{tasktotal}%
   \hspace{1em}}
