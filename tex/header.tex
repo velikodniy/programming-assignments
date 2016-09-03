@@ -31,17 +31,24 @@
 \usepackage{fontspec}
 
 \defaultfontfeatures{Scale=MatchLowercase,Mapping=tex-text}
-\setmainfont{Charis SIL Compact}
-\setsansfont{Ubuntu}
-\setmonofont{Ubuntu Mono}
+\setmainfont[Path = ../fonts/,
+	BoldFont = CharisSIL-B.ttf,
+  	ItalicFont = CharisSIL-I.ttf,
+  	BoldItalicFont = CharisSIL-BI.ttf]
+  	{CharisSIL-R.ttf}
+\setsansfont[Path = ../fonts/]{Ubuntu-R.ttf}
+\setmonofont[Path = ../fonts/]{UbuntuMono-R.ttf}
 
 %%% XeTeX fix
-\newfontfamily{\cyrillicfont}{Charis SIL Compact}
+\newfontfamily{\cyrillicfont}{CharisSIL-R.ttf}[Path = ../fonts/,
+	BoldFont = CharisSIL-B.ttf,
+  	ItalicFont = CharisSIL-I.ttf,
+  	BoldItalicFont = CharisSIL-BI.ttf]
 
 %%% Семейства шрифтов %%%
-\newfontfamily\footfont{Ubuntu}
-\newfontfamily\titlefont{Ubuntu}[FakeBold = 1.5]
-\newfontfamily\lstfont{Ubuntu}
+\newfontfamily\footfont{Ubuntu-R.ttf}[Path = ../fonts/]
+\newfontfamily\titlefont{Ubuntu-R.ttf}[Path = ../fonts/, FakeBold = 1.5]
+\newfontfamily\lstfont{Ubuntu-R.ttf}[Path = ../fonts/]
 
 %%% Графика %%%
 \usepackage{graphicx}
