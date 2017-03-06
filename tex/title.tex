@@ -1,4 +1,10 @@
 \begingroup
+\fancypagestyle{city}{ %
+  \fancyhf{} % remove everything
+  \renewcommand{\headrulewidth}{0pt} % remove lines as well
+  \renewcommand{\footrulewidth}{0pt}
+  \cfoot{\large\CITY, \Year}
+}
 \begin{center}
   \begingroup
   \noindent{
@@ -16,9 +22,8 @@
     \LARGE\textit{\PubType}
     
     \vfill\vfill
-    \large
-    \CITY, \Year
   }
   \endgroup
 \end{center}
+\thispagestyle{city}
 \newpage
