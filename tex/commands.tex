@@ -8,6 +8,10 @@
   \addcontentsline{toc}{section}{#1}
   \markboth{#1}{#1}}
 
+\newcommand{\Section}[1]{
+  \section{#1}
+  \markboth{#1}{#1}}
+
 \newcommand{\task}[0]{%
   \textbf{\thesubsection -\thetask}%
   \stepcounter{task}%
