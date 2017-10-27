@@ -139,15 +139,13 @@ Ax+By+C=0.
 определяются следующим образом:
 \begin{align*}
   [a_1, b_1] + [a_2, b_2] &= [a_1 + a_2, b_1 + b_2],\\
-  [a_1, b_1] - [a_2, b_2] &= [a_1 - a_2, b_1 - b_2],\\
+  [a_1, b_1] - [a_2, b_2] &= [a_1 - b_2, b_1 - a_2],\\
   [a_1, b_1] \times [a_2, b_2] &=
   [\min \{a_1a_2, a_1b_2, b_1a_2, b_1b_2\}, \max \{a_1a_2, a_1b_2, b_1a_2, b_1b_2\}],\\
   \frac{[a_1, b_1]}{[a_2, b_2]} &=
-  \left[
-    \min \left\{\frac{a_1}{a_2}, \frac{a_1}{b_2}, \frac{b_1}{a_2}, \frac{b_1}{b_2}\right\},
-    \max \left\{\frac{a_1}{a_2}, \frac{a_1}{b_2}, \frac{b_1}{a_2}, \frac{b_1}{b_2}\right\}
-    \right],\\
-  &\hskip19em\relax\textrm{если }0\not\in[a_2, b_2].
+  	[a_1, b_1] \times \frac1{[a_2, b_2]},\textrm{где }
+  	\frac1{[a_2, b_2]} = \left[\frac1{b_2}, \frac1{a_2}\right]
+  	\textrm{ и }0\not\in[a_2, b_2].
 \end{align*}
 
 Предусмотреть возможные исключительные ситуации, если это необходимо.
