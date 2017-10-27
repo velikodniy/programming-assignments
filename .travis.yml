@@ -13,5 +13,5 @@ deploy:
   api_key: $TOKEN
   file:
     - "build/programming-assignments.pdf"
-  name: Версия от $(date -Iseconds)
+  name: Версия от $(date +'%Y-%m-%d')
 skip-cleanup: true
