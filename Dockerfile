@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM ubuntu:16.04
 MAINTAINER Vadim Velikodniy <vadim@velikodniy.name>
 
 ENV DIR /book
