@@ -1,10 +1,9 @@
-name: build-pdf
+name: Build PDF
 
 on:
   push:
-    branches: 
-      - master
-
+    tags:
+    - '*'
 
 jobs:
   build:
@@ -12,11 +11,30 @@ jobs:
     container: 
       image: velikodniy/xelatex
     steps:
-    - uses: actions/checkout@v1
+    - name: Checkout code
+      uses: actions/checkout@v1
     - name: Build PDF
       run: bash -c "make"
-    - name: Upload PDF
-      uses: actions/upload-artifact@v1
+    - name: Create release
+      id: create_release
+      uses: actions/create-release@v1.0.0
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        name: programming-assignments.pdf
-        path: build/programming-assignments.pdf
+        tag_name: ${{ github.ref }}
+        release_name: Версия от ${{ github.ref }}
+        draft: false
+        prerelease: false
+    - name: Get version
+      id: get_version
+      run: echo ::set-output name=version::${GITHUB_REF#refs/tags/}
+    - name: Upload release asset
+      id: upload-release-asset 
+      uses: actions/upload-release-asset@v1.0.1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: build/programming-assignments.pdf
+        asset_name: programming-assignments-${{ steps.get_version.outputs.version }}.pdf
+        asset_content_type: application/pdf

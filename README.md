@@ -1,7 +1,7 @@
 Задачи по программированию
 ==========================
 
-[![Build Status](https://travis-ci.org/velikodniy/programming-assignments.svg?branch=master)](https://travis-ci.org/velikodniy/programming-assignments)
+[![Build PDF](https://github.com/velikodniy/programming-assignments/workflows/Build%20PDF/badge.svg)](https://github.com/velikodniy/programming-assignments/actions?query=workflow%3A%22Build+PDF%22)
 
 Этот репозиторий содержит исходные тексты задачника,
 ориентированного на вводный курс программирования.

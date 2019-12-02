@@ -1,7 +1,5 @@
 \documentclass[10pt, russian]{article}
 
-\usepackage{lipsum} % DELME
-
 \sloppy
 
 %%% Константы %%%
@@ -28,15 +26,17 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%%% Специальные символы %%%
+\usepackage{textcomp}
+\usepackage{gensymb}
+
 %%% Математические окружения %%%
+\usepackage{amssymb}
 \usepackage{amsmath}
 
 %%% Математические шрифты %%%
 \usepackage{mathspec}
 \usepackage[charter]{mathdesign}
-
-%%% Специальные символы %%%
-\usepackage{gensymb}
 
 %%% Шрифты документа %%%
 \usepackage{fontspec}
@@ -148,21 +148,12 @@
 
 %%% Прочее %%%
 \usepackage{indentfirst}
-%\usepackage[russian]{varioref}
 \usepackage{mathtext}
-\usepackage[normalem]{ulem}     % ???
-\usepackage{stmaryrd}           % ???
 \usepackage{calc}
-\usepackage{fancyvrb}
-\usepackage{rotating}
-\usepackage{bytefield}          % Рисование карт памяти
-\usepackage{epigraph}           % Эпиграфы
 \usepackage{lastpage}
-\usepackage{cancel}
+\usepackage{cancel}             % Зачёркнутый текст
 \usepackage{xfrac}              % Диагональные дроби
-\usepackage{framed}
-\usepackage{textcomp}           % Дополнительные символы
-
+\usepackage{framed}             % Текст в рамке
 \usepackage{totcount}           % Отображение значения счётчика в начале документа
 
 %%% Индекс %%%
