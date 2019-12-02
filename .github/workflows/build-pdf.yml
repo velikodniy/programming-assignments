@@ -1,0 +1,22 @@
+name: build-pdf
+
+on:
+  push:
+    branches: 
+      - master
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: 
+      image: velikodniy/xelatex
+    steps:
+    - uses: actions/checkout@v1
+    - name: Build PDF
+      run: bash -c "make"
+    - name: Upload PDF
+      uses: actions/upload-artifact@v1
+      with:
+        name: programming-assignments.pdf
+        path: build/programming-assignments.pdf
