@@ -9,7 +9,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container: 
-      image: velikodniy/xelatex
+      image: velikodniy/texlive
     steps:
     - name: Checkout code
       uses: actions/checkout@v1
